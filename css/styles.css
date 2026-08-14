@@ -125,18 +125,6 @@ img { display: block; }
 .link-arrow::after { content: ' →'; }
 [dir="rtl"] .link-arrow::after { content: ' ←'; }
 
-/* ── INTRO ─────────────────────────────────────────────────────── */
-.intro {
-  position: fixed; inset: 0; z-index: 120;
-  background: var(--rosso-cupo); color: var(--crema);
-  display: grid; place-items: center;
-  transition: opacity .55s ease;
-}
-.intro-in { text-align: center; font-family: var(--f-display); font-weight: 700; }
-.intro-l1, .intro-l2 { display: block; font-size: clamp(2.4rem, 8vw, 5rem); line-height: 1; }
-.intro-l2 { color: var(--oro); }
-.intro.is-gone { opacity: 0; pointer-events: none; }
-
 /* ── HEADER ────────────────────────────────────────────────────── */
 .hdr {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;

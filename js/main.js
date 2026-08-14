@@ -427,7 +427,13 @@
   }
   if (reducedMotion || !intro) {
     if (intro) { intro.remove(); intro = null; }
-    heroEntrance();
+    /* ⚠️ setTimeout 0 NON è decorativo: senza intro questo ramo gira in modo
+       SINCRONO, cioè PRIMA che il codice-firma — che sta sotto il marcatore
+       di fine plumbing, dentro questa stessa IIFE — abbia assegnato
+       `window.bespokeHeroEntrance`. Il risultato è un'entrata dell'hero MUTA:
+       nessun errore, elementi visibili, animazione semplicemente mai partita.
+       Rimandando di un tick la IIFE è conclusa e l'hook esiste. */
+    setTimeout(heroEntrance, 0);
   } else {
     setTimeout(hideIntro, SITE.introDuration);
     setTimeout(hideIntro, 6000); // safety net: l'intro non può incastrarsi
