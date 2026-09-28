@@ -46,12 +46,16 @@ html:not(.js) .reveal { opacity: 1; }
   --f-arabo:   'IBM Plex Sans Arabic', 'Familjen Grotesk', sans-serif;
 
   --hdr-h: 76px;
+  /* la barra delle urgenze sta SOPRA la testata: tutto ciò che deve stare
+     sotto la parte fissa (hero, badge, ancore, menu mobile) usa --fix-h */
+  --top-h: 34px;
+  --fix-h: calc(var(--top-h) + var(--hdr-h));
   --wrap: 1180px;
   --r: 14px;
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: calc(var(--hdr-h) + 12px); }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--fix-h) + 12px); }
 body {
   margin: 0;
   background: var(--crema);
@@ -112,6 +116,8 @@ img { display: block; }
   font-size: 1rem; text-decoration: none; padding: 15px 30px;
   border-radius: 999px; transition: transform .18s ease, background .18s ease, color .18s ease;
 }
+/* i .btn erano solo link: un <button> si porta dietro il bordo del browser */
+button.btn { border: 0; cursor: pointer; }
 .btn-solid { background: var(--rosso); color: #fff; }
 .btn-solid:hover { background: var(--rosso-cupo); transform: translateY(-2px); }
 .btn-line { border: 2px solid currentColor; }
@@ -125,9 +131,29 @@ img { display: block; }
 .link-arrow::after { content: ' →'; }
 [dir="rtl"] .link-arrow::after { content: ' ←'; }
 
+/* ── URGENZE (la barra in alto a destra) ───────────────────────── */
+.urgenze {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 101;
+  height: var(--top-h);
+  display: flex; align-items: center; justify-content: flex-end;
+  padding-inline: 24px;
+  background: var(--rosso-cupo); color: var(--crema);
+}
+.urg {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--f-display); font-weight: 500; font-size: .82rem;
+  color: inherit; text-decoration: none; white-space: nowrap;
+}
+.urg svg { width: 14px; height: 14px; flex: none; color: var(--oro); }
+/* il numero resta in cifre latine e nell'ordine giusto anche in arabo */
+.urg-n { font-weight: 700; color: #fff; letter-spacing: .02em; direction: ltr; unicode-bidi: isolate; }
+.urg:hover .urg-n, .urg:focus-visible .urg-n { text-decoration: underline; text-underline-offset: 3px; }
+.urg:focus-visible { outline: 2px solid var(--oro); outline-offset: 3px; border-radius: 4px; }
+.urg-s { display: none; }
+
 /* ── HEADER ────────────────────────────────────────────────────── */
 .hdr {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  position: fixed; top: var(--top-h); left: 0; right: 0; z-index: 100;
   height: var(--hdr-h);
   display: flex; align-items: center; gap: 18px;
   padding-inline: 24px;
@@ -177,7 +203,7 @@ img { display: block; }
 .hero {
   position: relative; min-height: 100vh; min-height: 100svh;
   display: grid; align-items: end;
-  padding: calc(var(--hdr-h) + 40px) 0 96px;
+  padding: calc(var(--fix-h) + 40px) 0 96px;
   overflow: hidden;
 }
 .hero-bg {
@@ -210,9 +236,11 @@ img { display: block; }
   font-size: 1rem; border-inline-start: 3px solid var(--oro); padding-inline-start: 16px;
 }
 .hero-firma span { display: block; font-style: normal; font-family: var(--f-display); font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--inch-tenue); margin-top: .4rem; }
+.hero-firma a { color: var(--sabbia); text-decoration: underline; text-decoration-color: rgba(224, 165, 43, .6); text-underline-offset: 3px; }
+.hero-firma a:hover { color: #fff; }
 
 .hero-stato {
-  position: absolute; top: calc(var(--hdr-h) + 22px); inset-inline-end: 24px;
+  position: absolute; top: calc(var(--fix-h) + 22px); inset-inline-end: 24px;
   display: flex; align-items: center; gap: 9px;
   background: rgba(36, 22, 17, .62); color: var(--crema);
   padding: 9px 16px; border-radius: 999px;
@@ -253,6 +281,11 @@ img { display: block; }
 .day.is-today .d-chi { color: #ffeccb; }
 .day.is-today .d-nota { color: #d3a89a; }
 .day.is-today.is-off { background: #2a1512; }
+
+/* Palermo non ha giorni fissi: il rimando alle notizie sta sotto il tabellone */
+.board-news { margin: -1.6rem 0 2.6rem; font-family: var(--f-display); font-size: 1rem; color: #ddcbbc; }
+.board-news a { color: var(--oro); text-underline-offset: 3px; }
+.board-news a:hover { color: #fff; }
 
 .cosa-portare {
   background: rgba(232, 211, 186, .08);
@@ -311,6 +344,18 @@ img { display: block; }
 .cosa-c p { margin: 0; color: var(--inch-soft); }
 .cosa-c strong { color: var(--inchiostro); }
 
+/* il grazie al Banco: sta sotto le quattro cose, perché il pacco arriva da lì */
+.grazie {
+  margin-top: 28px; padding: 24px 28px;
+  display: grid; grid-template-columns: auto 1fr; gap: 6px 26px; align-items: baseline;
+  background: var(--crema);
+  border-inline-start: 4px solid var(--oro);
+  border-start-end-radius: var(--r); border-end-end-radius: var(--r);
+}
+.grazie-lab { margin: 0; font-family: var(--f-display); font-weight: 700; font-size: 1.5rem; letter-spacing: -.02em; color: var(--rosso-cupo); }
+.grazie-txt { margin: 0; font-size: 1.05rem; color: var(--inch-soft); }
+.grazie-txt strong { color: var(--inchiostro); }
+
 /* ── 6 · IL BENE CONFISCATO ────────────────────────────────────── */
 .bene { padding: 96px 0; background: var(--blu); color: var(--crema); }
 .bene .occhiello { color: var(--oro); }
@@ -326,8 +371,19 @@ img { display: block; }
 .tl-y { font-size: 1.55rem; color: var(--oro); }
 .tl p { margin: 0; color: #cfdcef; }
 .tl strong { color: #fff; }
-.tl.is-now .tl-y { color: #fff; background: var(--rosso); border-radius: 999px; padding: 3px 16px; font-size: 1.1rem; justify-self: start; }
+/* align-self: senza, la pillola si allungava fino all'altezza del testo accanto */
+.tl.is-now .tl-y { color: #fff; background: var(--rosso); border-radius: 999px; padding: 3px 16px; font-size: 1.1rem; justify-self: start; align-self: start; }
 .tl.is-now p { color: #fff; }
+
+/* i due cammini dei pellegrini che passano dalla villa */
+.cammini {
+  margin: -1.4rem 0 3rem; padding: 22px 26px;
+  border: 1px solid rgba(232, 211, 186, .28); border-radius: var(--r);
+  background: rgba(255, 255, 255, .05);
+}
+.cammini .occhiello { color: var(--oro); }
+.cammini p:last-child { margin: 0; max-width: 72ch; color: #cfdcef; }
+.cammini strong { color: #fff; }
 
 .bene-foto { margin: 0 0 26px; }
 .bene-foto figcaption { font-size: .9rem; color: #b6c6e0; margin-top: .7rem; }
@@ -342,7 +398,7 @@ img { display: block; }
 .zoom:focus-visible { outline: 3px solid var(--oro); outline-offset: 3px; }
 @media (min-width: 861px) {
   .bene .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 26px 40px; }
-  .bene .sec-head, .timeline { grid-column: 1 / -1; }
+  .bene .sec-head, .timeline, .cammini { grid-column: 1 / -1; }
 }
 
 /* ── 7 · SEDI ──────────────────────────────────────────────────── */
@@ -412,6 +468,63 @@ img { display: block; }
 .carte li { margin-bottom: .55rem; color: var(--inch-soft); }
 .carte strong { color: var(--inchiostro); }
 
+/* ── IL PRESIDENTE — scheda in stile enciclopedia ──────────────────
+   Il linguaggio visivo di una voce d'enciclopedia (titolo in serif con
+   filetto, riquadro dei dati a lato, sezioni, note numerate) con i colori
+   del sito: niente marchi né loghi di altri, solo la forma. */
+.presidente { padding: 92px 0; background: var(--crema-2); }
+.wiki {
+  max-width: 1040px; margin-inline: auto;
+  padding: 44px 48px 40px;
+  background: var(--bianco); border: 1px solid var(--linea); border-radius: 6px;
+  box-shadow: 0 14px 40px rgba(36, 22, 17, .06);
+  display: flow-root; /* contiene il riquadro flottante */
+}
+.wiki-head { border-bottom: 1px solid var(--linea); padding-bottom: 14px; margin-bottom: 24px; }
+.wiki-kicker {
+  margin: 0 0 .5rem; font-family: var(--f-display); font-weight: 600; font-size: .74rem;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--rosso);
+}
+.wiki .wiki-h { font-family: var(--f-testo); font-weight: 500; font-size: clamp(2.1rem, 4.4vw, 3rem); letter-spacing: -.01em; line-height: 1.1; }
+.wiki-sub { margin: .45rem 0 0; font-size: .9rem; font-style: italic; color: var(--inch-tenue); }
+.wiki p, .wiki li { color: var(--inchiostro); }
+.wiki-lead { font-size: 1.08rem; }
+/* overflow: il titoletto si fa più stretto accanto al riquadro flottante,
+   altrimenti il suo filetto passa SOTTO il riquadro */
+.wiki .wiki-h3 {
+  font-family: var(--f-testo); font-weight: 500; font-size: 1.5rem; letter-spacing: 0; line-height: 1.25;
+  margin: 1.9rem 0 .8rem; padding-bottom: 6px; border-bottom: 1px solid var(--linea);
+  overflow: hidden;
+}
+.wiki-ul, .wiki-quotes, .wiki-note { margin: 0 0 1em; padding-inline-start: 22px; }
+.wiki-ul li, .wiki-quotes li { margin-bottom: .5rem; }
+.wiki-quotes li { font-style: italic; }
+.wiki-note { font-size: .9rem; }
+.wiki-note li { margin-bottom: .35rem; }
+.wiki-note a { color: var(--blu); }
+.wiki-note li:target { background: #fbeec9; }
+.ref { font-size: .72em; line-height: 0; margin-inline-start: 1px; }
+.ref a { color: var(--blu); text-decoration: none; }
+.ref a:hover { text-decoration: underline; }
+
+.wiki-box {
+  float: right; width: 300px; margin: 0 0 22px 30px;
+  background: var(--crema); border: 1px solid var(--linea); border-radius: 6px;
+  overflow: hidden; font-size: .92rem;
+}
+[dir="rtl"] .wiki-box { float: left; margin: 0 30px 22px 0; }
+/* .wiki davanti: senza, vinceva `.wiki p` e il nome usciva scuro sul rosso */
+.wiki .wb-h { margin: 0; padding: 11px 14px; text-align: center; background: var(--rosso-cupo); color: var(--crema); font-family: var(--f-display); font-weight: 700; font-size: 1.08rem; }
+.wiki .wb-motto { margin: 0; padding: 13px 16px; text-align: center; font-style: italic; color: var(--inch-soft); border-bottom: 1px solid var(--linea); }
+.wb-dl { margin: 0; }
+.wb-dl > div { display: grid; grid-template-columns: 104px 1fr; gap: 12px; padding: 9px 14px; border-bottom: 1px solid var(--linea); }
+.wb-dl > div:last-child { border-bottom: 0; }
+/* etichette in serif: in Familjen Grotesk a 12,8px l'accento di «Attività»
+   toccava la lettera (accenti-check, 28/9/2026) */
+.wb-dl dt { font-family: var(--f-testo); font-weight: 600; font-size: .88rem; color: var(--inchiostro); }
+.wb-dl dd { margin: 0; line-height: 1.45; color: var(--inch-soft); }
+.wb-dl a { color: var(--blu); }
+
 /* ── 10 · COME AIUTARE ─────────────────────────────────────────── */
 .aiutare { padding: 92px 0; background: var(--crema); }
 .aiut-grid { display: grid; grid-template-columns: 1fr .9fr; gap: 56px; align-items: center; }
@@ -421,9 +534,35 @@ img { display: block; }
 .aiutare figure { margin: 0; }
 .aiutare figcaption { font-size: .88rem; color: var(--inch-tenue); margin-top: .7rem; }
 
+/* ── NOTIZIE — i post della Pagina Facebook ────────────────────── */
+.notizie { padding: 96px 0; background: var(--inchiostro); color: var(--crema); }
+.notizie .occhiello { color: var(--oro); }
+.not-grid { display: grid; grid-template-columns: 1fr 500px; gap: 56px; align-items: start; }
+.notizie h2 { font-size: clamp(2rem, 4.2vw, 3rem); margin-bottom: 1rem; }
+.not-txt p { color: #d9c7b8; }
+.not-links { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 26px; margin: 1.7rem 0 1.3rem; }
+.not-links .link-arrow { color: var(--crema); }
+.notizie .not-txt .mini { color: #b5a194; }
+
+/* Il riquadro di Facebook si carica SOLO col consenso: prima c'è questo. */
+.fb-box { background: var(--bianco); color: var(--inchiostro); border-radius: var(--r); overflow: hidden; }
+.fb-consent { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; padding: 34px 32px 32px; }
+.fb-c-t { margin: 0; font-family: var(--f-display); font-weight: 700; font-size: 1.3rem; line-height: 1.2; }
+.fb-c-p { margin: 0; color: var(--inch-soft); }
+.fb-remember { display: flex; align-items: center; gap: 9px; font-size: .92rem; color: var(--inch-soft); cursor: pointer; }
+.fb-remember input { width: 18px; height: 18px; margin: 0; accent-color: var(--rosso); }
+.fb-box .link-arrow { color: var(--blu); }
+.fb-frame { display: block; width: 100%; border: 0; background: #fff; }
+.fb-forget {
+  display: block; width: 100%; padding: 12px 16px;
+  font-family: var(--f-display); font-size: .86rem; color: var(--inch-soft);
+  background: var(--crema); border: 0; border-top: 1px solid var(--linea); cursor: pointer;
+}
+.fb-forget:hover { color: var(--rosso-cupo); }
+
 /* ── 11 · CONTATTI ─────────────────────────────────────────────── */
 .contatti { padding: 92px 0 100px; background: var(--bianco); }
-.cont-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.cont-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .cont-c {
   display: block; text-decoration: none;
   background: var(--crema); border: 1px solid var(--linea); border-radius: var(--r);
@@ -485,6 +624,11 @@ img { display: block; }
 [dir="rtl"] .d-nome, [dir="rtl"] .cf-num, [dir="rtl"] .t-eur,
 [dir="rtl"] .tl-y, [dir="rtl"] .cc-val, [dir="rtl"] .sede-addr { font-family: var(--f-arabo); letter-spacing: 0; }
 [dir="rtl"] .occhiello, [dir="rtl"] .hero .kicker { letter-spacing: 0; }
+/* le parti nuove (28/9/2026) che hanno un font esplicito: in arabo va il
+   font arabo, altrimenti il browser ripiega su quello di sistema */
+[dir="rtl"] .wiki .wiki-h, [dir="rtl"] .wiki .wiki-h3, [dir="rtl"] .wiki-kicker,
+[dir="rtl"] .wb-h, [dir="rtl"] .wb-dl dt, [dir="rtl"] .urg, [dir="rtl"] .grazie-lab,
+[dir="rtl"] .fb-c-t, [dir="rtl"] .fb-forget, [dir="rtl"] .board-news { font-family: var(--f-arabo); letter-spacing: 0; }
 [dir="rtl"] .d-ora { text-align: start; }
 [dir="rtl"] .hero-veil { background:
   linear-gradient(to top, rgba(36, 22, 17, .93) 0%, rgba(36, 22, 17, .78) 38%, rgba(36, 22, 17, .28) 72%, rgba(36, 22, 17, .12) 100%),
@@ -496,24 +640,34 @@ img { display: block; }
 [dir="rtl"] .cf-num, [dir="rtl"] .iban, [dir="rtl"] .b-v, [dir="rtl"] .stat dd,
 [dir="rtl"] .d-ora, [dir="rtl"] .cc-val, [dir="rtl"] .sede-addr { direction: ltr; unicode-bidi: embed; }
 [dir="rtl"] .d-ora, [dir="rtl"] .cc-val, [dir="rtl"] .sede-addr { text-align: end; }
+/* i rimandi alle note restano «[1]» anche in arabo */
+[dir="rtl"] .ref { direction: ltr; unicode-bidi: isolate; }
 
 /* ── RESPONSIVE ────────────────────────────────────────────────── */
 @media (max-width: 1080px) {
   .tiers, .modi, .stats, .cont-grid { grid-template-columns: repeat(2, 1fr); }
 }
-@media (max-width: 960px) {
+/* Il menu passa alla tendina a 1080px, non a 960 come le griglie: con otto
+   voci (dal 28/9/2026 c'è «Notizie») sotto i 1050px le voci andavano a capo
+   («La / settimana», «Dona / ora»), in inglese e arabo già da prima.
+   Misurato lingua per lingua: su una riga da 1011px (IT) e 1051px (EN, AR).
+   ⚠️ Deve restare uguale a SITE.breakpointMenu in main.js. */
+@media (max-width: 1080px) {
   .burger { display: block; }
   .nav {
-    position: fixed; inset: var(--hdr-h) 0 auto; flex-direction: column;
+    position: fixed; inset: var(--fix-h) 0 auto; flex-direction: column;
     align-items: stretch; gap: 0; padding: 18px 24px 26px;
     background: var(--crema); border-bottom: 1px solid var(--linea);
     transform: translateY(-120%); transition: transform .3s ease;
-    max-height: calc(100vh - var(--hdr-h)); overflow-y: auto;
+    max-height: calc(100vh - var(--fix-h)); overflow-y: auto;
   }
   .nav.nav-open { transform: translateY(0); }
   .nav a { padding: 14px 0; border-bottom: 1px solid var(--linea); font-size: 1.05rem; }
   .nav .nav-cta { margin-top: 14px; text-align: center; }
-  .cinque-grid, .aiut-grid { grid-template-columns: 1fr; gap: 34px; }
+}
+@media (max-width: 960px) {
+  .cinque-grid, .aiut-grid, .not-grid { grid-template-columns: 1fr; gap: 34px; }
+  .fb-box { max-width: 500px; }
   .cosa-grid, .sedi-grid { grid-template-columns: 1fr; }
   .ftr-grid { grid-template-columns: 1fr 1fr; }
   .action-bar { display: flex; }
@@ -522,9 +676,18 @@ img { display: block; }
 @media (max-width: 860px) {
   .bene .wrap { display: block; }
   .bene-foto { margin-bottom: 20px; }
+  .cammini { margin-top: 0; }
+}
+@media (max-width: 760px) {
+  .wiki { padding: 30px 22px 28px; }
+  .wiki-box, [dir="rtl"] .wiki-box { float: none; width: auto; margin: 0 0 24px; }
 }
 @media (max-width: 640px) {
-  :root { --hdr-h: 66px; }
+  :root { --hdr-h: 66px; --top-h: 32px; }
+  .urgenze { padding-inline: 16px; }
+  .urg { font-size: .8rem; }
+  .urg-l { display: none; }
+  .urg-s { display: inline; }
   body { font-size: 16.5px; }
   .wrap, .hero-in, .ftr-bar { width: calc(100% - 32px); }
   .hero { padding-bottom: 64px; }
@@ -539,4 +702,8 @@ img { display: block; }
   .tl { grid-template-columns: 1fr; gap: 8px; }
   .serie, .carte, .cosa-portare { padding: 24px 20px; }
   .cf-card { padding: 26px 20px; }
+  .grazie { grid-template-columns: 1fr; padding: 22px 20px; }
+  .cammini { padding: 20px; }
+  .fb-consent { padding: 26px 22px 24px; }
+  .wb-dl > div { grid-template-columns: 96px 1fr; }
 }

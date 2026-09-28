@@ -6,8 +6,9 @@
 <title>A.S.FA. Sicilia ODV — Associazione di Sostegno alle Famiglie · Palermo e Monreale</title>
 <meta name="description" content="Dal 2012 sosteniamo le famiglie di Palermo e Monreale: distribuzione alimentare, abiti, visite mediche gratuite e sportello di ascolto. La sede di Monreale è un bene confiscato alla mafia. Dona il tuo 5×1000: C.F. 97270000827.">
 <link rel="canonical" href="https://asfasicilia.it/">
-<!-- ⚠️ TEMPORANEO — anteprima per il cliente. IBAN, email e telefono sono ancora
-     da confermare: finché lo sono, la pagina non deve comparire nelle ricerche.
+<!-- ⚠️ TEMPORANEO — anteprima per il cliente. I telefoni sono confermati
+     (28/9/2026), ma IBAN ed email sono ancora da confermare: finché lo sono,
+     la pagina non deve comparire nelle ricerche.
      DA RIMUOVERE quando si va live sul dominio con i contatti veri. -->
 <meta name="robots" content="noindex, nofollow">
 <meta property="og:type" content="website">
@@ -30,10 +31,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..600&family=IBM+Plex+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=2">
+<link rel="stylesheet" href="css/styles.css?v=3">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-<script src="js/main.js?v=2" defer></script>
+<script src="js/main.js?v=3" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -49,6 +50,7 @@
       "foundingDate": "2012-01-16",
       "slogan": "Noi ci siamo, pensiamo al dopo di noi con azioni concrete",
       "taxID": "97270000827",
+      "telephone": "+39 331 366 9364",
       "description": "Organizzazione di volontariato che sostiene le famiglie in difficoltà di Palermo e Monreale con distribuzione alimentare, abiti, visite mediche gratuite e uno sportello di ascolto. La sede operativa di Monreale è un bene confiscato alla mafia.",
       "areaServed": [
         { "@type": "City", "name": "Palermo" },
@@ -62,24 +64,49 @@
         "addressRegion": "PA",
         "addressCountry": "IT"
       },
-      "location": {
-        "@type": "Place",
-        "name": "Sede operativa di Monreale — bene confiscato alla mafia",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Via Favara 6",
-          "postalCode": "90046",
-          "addressLocality": "Monreale",
-          "addressRegion": "PA",
-          "addressCountry": "IT"
+      "location": [
+        {
+          "@type": "Place",
+          "name": "Sede operativa di Monreale — bene confiscato alla mafia",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Via Favara 6",
+            "postalCode": "90046",
+            "addressLocality": "Monreale",
+            "addressRegion": "PA",
+            "addressCountry": "IT"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "Sede di Palermo — distribuzione e prenotazione delle visite",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Via Antonio Marinuzzi 61",
+            "postalCode": "90127",
+            "addressLocality": "Palermo",
+            "addressRegion": "PA",
+            "addressCountry": "IT"
+          }
         }
-      },
-      "sameAs": ["https://www.facebook.com/groups/707777091061742"],
-      "member": {
-        "@type": "Person",
-        "name": "Diego Mannisi",
-        "jobTitle": "Presidente"
-      }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/groups/707777091061742",
+        "https://www.facebook.com/p/Associazione-di-Sostegno-alle-Famiglie-Aiutateci-ad-aiutare-100076316472966/"
+      ],
+      "founder": { "@id": "https://asfasicilia.it/#presidente" },
+      "member": { "@id": "https://asfasicilia.it/#presidente" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://asfasicilia.it/#presidente",
+      "name": "Diego Mannisi",
+      "honorificPrefix": "Cav.",
+      "jobTitle": "Presidente di A.S.FA. Sicilia ODV",
+      "birthPlace": "Palermo",
+      "award": "Cavaliere dell'Ordine al Merito della Repubblica Italiana (2000)",
+      "sameAs": ["https://www.facebook.com/profile.php?id=100010772682720"],
+      "worksFor": { "@id": "https://asfasicilia.it/#org" }
     },
     {
       "@type": "WebSite",
@@ -106,7 +133,7 @@
         {
           "@type": "Question",
           "name": "Dove si trova la sede?",
-          "acceptedAnswer": { "@type": "Answer", "text": "La sede legale è a Palermo in Via Filippo Corazza 20/B. La sede operativa è a Monreale in Via Favara 6, dentro una villa confiscata alla mafia e assegnata all'associazione dal Comune di Monreale con bando pubblico nel 2018." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Le distribuzioni si fanno in due sedi. A Monreale in Via Favara 6, dentro una villa confiscata alla mafia e assegnata all'associazione dal Comune di Monreale con bando pubblico nel 2018. A Palermo in Via Antonio Marinuzzi 61, nei giorni annunciati sulla pagina e nel gruppo Facebook dell'associazione. La sede legale è a Palermo in Via Filippo Corazza 20/B." }
         },
         {
           "@type": "Question",
@@ -116,7 +143,7 @@
         {
           "@type": "Question",
           "name": "Le visite mediche sono davvero gratuite?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Sì. Rientrano nel Programma Nazionale Equità della Salute 2021-2027, realizzato con l'ASP di Palermo per contrastare la povertà sanitaria. Sono rivolte a chi ha un ISEE entro i 10.000 euro e si prenotano contattando l'associazione." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Sì. Rientrano nel Programma Nazionale Equità nella Salute 2021-2027, realizzato con l'ASP di Palermo per contrastare la povertà sanitaria. Sono rivolte a chi ha un ISEE entro i 10.000 euro e si prenotano contattando l'associazione." }
         }
       ]
     }
@@ -131,6 +158,17 @@
 <!-- Nessuna intro: qualunque cosa ci si metta duplica qualcosa già a schermo
      (l'H1 «Noi ci siamo», o lo stato di oggi che è già nel badge dell'hero).
      Su un sito dove si viene a cercare un orario, una tenda è solo attrito. -->
+
+<!-- ══ URGENZE — richiesta del presidente (28/9/2026): in alto a destra,
+     sempre a vista. Frase breve sotto i 640px, dove quella intera non entra. ══ -->
+<div class="urgenze">
+  <a class="urg" href="tel:+393518884997">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+    <span class="urg-l" data-i18n="urg.l">Per comunicazioni urgenti chiamate quando volete al</span>
+    <span class="urg-s" data-i18n="urg.s">Urgenze, a ogni ora:</span>
+    <strong class="urg-n">351 888 4997</strong>
+  </a>
+</div>
 
 <!-- ══ HEADER ══ -->
 <header class="hdr" id="hdr">
@@ -153,6 +191,7 @@
     <a href="#sedi" data-i18n="nav.sedi">Sedi</a>
     <a href="#5x1000" data-i18n="nav.5x1000">5×1000</a>
     <a href="#aiutare" data-i18n="nav.aiutare">Come aiutare</a>
+    <a href="#notizie" data-i18n="nav.notizie">Notizie</a>
     <a href="#contatti" data-i18n="nav.contatti">Contatti</a>
     <a class="nav-cta" href="#dona" data-i18n="nav.dona">Dona ora</a>
   </nav>
@@ -181,7 +220,7 @@
       <a class="btn btn-solid" href="#5x1000" data-i18n="hero.cta1">Dona il tuo 5×1000</a>
       <a class="btn btn-line" href="#settimana" data-i18n="hero.cta2">Quando ci trovi</a>
     </div>
-    <p class="hero-firma" data-i18n="hero.firma">«Piccoli gesti concreti. Fatti e non parole.»<span>Cav. Diego Mannisi, presidente</span></p>
+    <p class="hero-firma" data-i18n="hero.firma">«Piccoli gesti concreti. Fatti e non parole.»<span><a href="#presidente">Cav. Diego Mannisi</a>, presidente</span></p>
   </div>
   <div class="hero-stato">
     <span class="dot" aria-hidden="true"></span>
@@ -236,6 +275,8 @@
         <span class="d-chi" data-i18n="d.chiuso3">Chiuso</span>
       </li>
     </ol>
+
+    <p class="board-news reveal" data-i18n="sett.news">A Palermo, in Via Marinuzzi, si distribuisce nei giorni che annunciamo: li trovi nelle <a href="#notizie">ultime notizie</a>.</p>
 
     <aside class="cosa-portare reveal">
       <h3 data-i18n="portare.h3">Cosa portare la prima volta</h3>
@@ -297,7 +338,7 @@
       <article class="cosa-c reveal">
         <span class="cosa-n">03</span>
         <h3 data-i18n="cosa.3.h">Visite mediche gratuite</h3>
-        <p data-i18n="cosa.3.p">Cardiologia, diabetologia, medicina interna, oculistica, dermatologia, odontoiatria. Con l'<strong>ASP di Palermo</strong>, dentro il Programma Nazionale Equità della Salute 2021-2027 contro la povertà sanitaria. Per chi ha un ISEE entro i 10.000 euro.</p>
+        <p data-i18n="cosa.3.p">Cardiologia, diabetologia, medicina interna, oculistica, dermatologia, odontoiatria. Con l'<strong>ASP di Palermo</strong>, dentro il Programma Nazionale Equità nella Salute 2021-2027 contro la povertà sanitaria. Per chi ha un ISEE entro i 10.000 euro.</p>
       </article>
       <article class="cosa-c reveal">
         <span class="cosa-n">04</span>
@@ -305,6 +346,13 @@
         <p data-i18n="cosa.4.p">Sul nostro striscione c'è scritto «sportello ascolto». Non è un modo di dire: mercoledì e venerdì c'è qualcuno che sta seduto lì per capire di cosa hai bisogno e come si fa una pratica.</p>
       </article>
     </div>
+
+    <!-- Il ringraziamento è del presidente, con le sue parole («l'attenzione
+         rivolta ai nostri sodalizi», post del 27/9/2026 nel gruppo). -->
+    <aside class="grazie reveal">
+      <p class="grazie-lab" data-i18n="grazie.lab">Grazie</p>
+      <p class="grazie-txt" data-i18n="grazie.txt">Un grazie particolare al <strong>Banco delle Opere di Carità Sicilia Occidentale</strong> e alla sua responsabile, la <strong>dott.ssa Nelly Palazzo</strong>, per l'attenzione rivolta ai nostri sodalizi.</p>
+    </aside>
   </div>
 </section>
 
@@ -320,11 +368,16 @@
     <ol class="timeline">
       <li class="tl reveal"><span class="tl-y">2016</span><p data-i18n="tl.1">L'Agenzia nazionale per i beni confiscati consegna al Comune di Monreale due ville già di <strong>Giuseppe Caramazza</strong>, con il vincolo di destinarle a finalità sociali.</p></li>
       <li class="tl reveal"><span class="tl-y">2017</span><p data-i18n="tl.2">Il Comune pubblica il <strong>bando</strong> rivolto ad associazioni, cooperative sociali ed enti di volontariato.</p></li>
-      <li class="tl reveal"><span class="tl-y">2018</span><p data-i18n="tl.3">Il 30 marzo il bene viene <strong>assegnato ad A.S.FA.</strong> L'8 settembre l'arcivescovo <strong>Michele Pennisi</strong> benedice il sito.</p></li>
-      <li class="tl reveal"><span class="tl-y">2020</span><p data-i18n="tl.4">Il 29 febbraio la sede viene <strong>intitolata all'avvocato Enzo Fragalà</strong>, ucciso a Palermo nel 2010 dopo un pestaggio di matrice mafiosa. Alla cerimonia ci sono la moglie e la figlia.</p></li>
-      <li class="tl reveal"><span class="tl-y">2023</span><p data-i18n="tl.5">Partono i <strong>lavori di riqualificazione</strong> finanziati dal GAL Terre Normanne con fondi europei per lo sviluppo rurale.</p></li>
-      <li class="tl reveal is-now"><span class="tl-y" data-i18n="tl.oggi">Oggi</span><p data-i18n="tl.6">Il centro ricreativo e culturale e il punto di informazione turistica sono <strong>realizzati e attivi</strong>. Dentro c'è l'aula intitolata a Fragalà, dove si parla di legalità. Fuori, il lunedì e il martedì, c'è la fila.</p></li>
+      <li class="tl reveal"><span class="tl-y">2018</span><p data-i18n="tl.3">Il 30 marzo il bene viene <strong>assegnato ad A.S.FA.</strong> L'8 settembre benedicono il sito l'arcivescovo di Monreale <strong>Michele Pennisi</strong> e <strong>mons. Santo Marcianò</strong>, Ordinario militare per l'Italia: il vescovo che guida i cappellani di Esercito, Marina, Aeronautica, Carabinieri e Guardia di Finanza.</p></li>
+      <li class="tl reveal"><span class="tl-y">2020</span><p data-i18n="tl.4">Il 29 febbraio la sede viene <strong>intitolata all'avvocato Enzo Fragalà</strong>, ucciso a Palermo nel 2010 dopo un pestaggio di matrice mafiosa. Alla cerimonia ci sono la moglie, la professoressa <strong>Silvana Friscia</strong>, familiare di una vittima del dovere dell'Arma dei Carabinieri, e la figlia, l'avvocato <strong>Marzia Fragalà</strong>.</p></li>
+      <li class="tl reveal"><span class="tl-y">2023</span><p data-i18n="tl.5">Partono i <strong>lavori di riqualificazione</strong> finanziati dal GAL Terre Normanne con fondi europei per lo sviluppo rurale: la villa diventa un <strong>centro culturale e sociale</strong>.</p></li>
+      <li class="tl reveal is-now"><span class="tl-y" data-i18n="tl.oggi">Oggi</span><p data-i18n="tl.6">Il centro culturale e sociale e il punto di informazione turistica sono <strong>realizzati e attivi</strong>. Nell'aula intitolata a Fragalà si tengono <strong>convegni</strong> e si parla di legalità. Fuori, il lunedì e il martedì, c'è la fila.</p></li>
     </ol>
+
+    <aside class="cammini reveal">
+      <p class="occhiello" data-i18n="cam.occhiello">Sul cammino</p>
+      <p data-i18n="cam.p">La villa è sull'itinerario della <strong>Magna Via Francigena</strong> e dell'<strong>Itinerarium Rosaliae</strong>, i due cammini dei pellegrini che da Palermo salgono insieme a Monreale. Chi li percorre trova qui anche il punto di informazione turistica.</p>
+    </aside>
 
     <figure class="bene-foto reveal">
       <button type="button" class="zoom" data-full="img/targhe-muro.jpg" aria-label="Ingrandisci la foto delle targhe" data-i18n-aria="zoom.1">
@@ -336,7 +389,7 @@
       <button type="button" class="zoom" data-full="img/aula-fragala.jpg" aria-label="Ingrandisci la foto della sala interna" data-i18n-aria="zoom.2">
         <img src="img/aula-fragala.jpg" alt="La sala interna della sede, con i tavoli, le postazioni e la vista sulle colline di Monreale" width="1400" height="1867" data-i18n-alt="bene.foto2.alt">
       </button>
-      <figcaption data-i18n="bene.foto2.cap">La sala dedicata a Enzo Fragalà, dentro la villa.</figcaption>
+      <figcaption data-i18n="bene.foto2.cap">La sala dedicata a Enzo Fragalà, dove si tengono i convegni.</figcaption>
     </figure>
     <figure class="bene-foto reveal">
       <button type="button" class="zoom" data-full="img/targa-gal.jpg" aria-label="Ingrandisci la targa del progetto" data-i18n-aria="zoom.3">
@@ -368,12 +421,16 @@
         <p data-i18n="sedi.1.p">È qui che si distribuisce, il lunedì e il martedì, e che c'è lo sportello.</p>
         <a class="link-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Via+Favara+6+Monreale+PA" target="_blank" rel="noopener" data-i18n="sedi.apri">Apri in Google Maps</a>
       </article>
+      <!-- Via Marinuzzi 61 è «la nostra Sede di Palermo» negli avvisi del
+           presidente (gruppo Facebook, settembre 2026; pagina, aprile 2024):
+           lì si distribuisce e si prenotano le visite. Corazza 20/B resta la
+           sede legale del RUNTS. -->
       <article class="sede reveal">
-        <h3 data-i18n="sedi.2.h">Palermo — sede legale</h3>
-        <p class="sede-addr">Via Filippo Corazza 20/B<br>90127 Palermo</p>
-        <p class="sede-tag" data-i18n="sedi.2.tag">Sede legale e operativa</p>
-        <p data-i18n="sedi.2.p">L'indirizzo con cui l'associazione è iscritta al Registro unico del Terzo settore.</p>
-        <a class="link-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Via+Filippo+Corazza+20+Palermo" target="_blank" rel="noopener" data-i18n="sedi.apri2">Apri in Google Maps</a>
+        <h3 data-i18n="sedi.2.h">Palermo — distribuzione e visite</h3>
+        <p class="sede-addr">Via Antonio Marinuzzi 61<br>90127 Palermo</p>
+        <p class="sede-tag" data-i18n="sedi.2.tag">Nei giorni annunciati</p>
+        <p data-i18n="sedi.2.p">Qui si fanno le distribuzioni di Palermo e le prenotazioni delle visite mediche, nei giorni che annunciamo su Facebook. La sede legale, con cui l'associazione è iscritta al RUNTS, è in Via Filippo Corazza 20/B.</p>
+        <a class="link-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Via+Antonio+Marinuzzi+61+90127+Palermo" target="_blank" rel="noopener" data-i18n="sedi.apri2">Apri in Google Maps</a>
       </article>
     </div>
     <div class="mappa reveal">
@@ -443,8 +500,8 @@
     <dl class="stats">
       <div class="stat reveal"><dt data-i18n="num.1.t">Volontari iscritti</dt><dd>14</dd><span data-i18n="num.1.n">dichiarati al RUNTS</span></div>
       <div class="stat reveal"><dt data-i18n="num.2.t">Dipendenti</dt><dd>0</dd><span data-i18n="num.2.n">nessuno prende uno stipendio</span></div>
-      <div class="stat reveal"><dt data-i18n="num.3.t">Famiglie a Monreale</dt><dd>~300</dd><span data-i18n="num.3.n">dato 2020, in aggiornamento</span></div>
-      <div class="stat reveal"><dt data-i18n="num.4.t">Famiglie a Palermo</dt><dd>~750</dd><span data-i18n="num.4.n">dato 2020, in aggiornamento</span></div>
+      <div class="stat reveal"><dt data-i18n="num.3.t">Famiglie a Monreale</dt><dd>936</dd><span data-i18n="num.3.n">dato 2026</span></div>
+      <div class="stat reveal"><dt data-i18n="num.4.t">Famiglie a Palermo</dt><dd>920</dd><span data-i18n="num.4.n">dato 2026</span></div>
     </dl>
 
     <div class="serie reveal">
@@ -474,13 +531,77 @@
   </div>
 </section>
 
-<!-- ══ 10 · COME AIUTARE ═════════════════════════════════ -->
+<!-- ══ 10 · IL PRESIDENTE — scheda in stile enciclopedia ══
+     Richiesta del cliente (28/9/2026): «chi è, cosa fa, tipo Wikipedia».
+     Solo fatti con una fonte: le note in fondo dicono da dove viene ognuno.
+     ⛔ «Cavaliere del Lavoro» è FALSO (lo scrivono ANAS e la stampa): è
+     Cavaliere OMRI, decreto 27/12/2000, verificato su Quirinale + G.U. -->
+<section class="presidente" id="presidente" aria-labelledby="pres-h">
+  <div class="wrap">
+    <article class="wiki reveal">
+      <header class="wiki-head">
+        <p class="wiki-kicker" data-i18n="wiki.kicker">Chi guida l'associazione</p>
+        <h2 id="pres-h" class="wiki-h" data-i18n="wiki.h">Diego Mannisi</h2>
+        <p class="wiki-sub" data-i18n="wiki.sub">Scheda biografica del presidente · aggiornata a settembre 2026</p>
+      </header>
+
+      <aside class="wiki-box" aria-label="Dati in breve" data-i18n-aria="wb.aria">
+        <p class="wb-h" data-i18n="wb.h">Diego Mannisi</p>
+        <p class="wb-motto" data-i18n="wb.motto">«Piccoli gesti concreti. Fatti e non parole.»</p>
+        <dl class="wb-dl">
+          <div><dt data-i18n="wb.nascita.t">Nascita</dt><dd data-i18n="wb.nascita">Palermo</dd></div>
+          <div><dt data-i18n="wb.ruolo.t">Ruolo</dt><dd data-i18n="wb.ruolo">Fondatore e presidente di A.S.FA. Sicilia ODV</dd></div>
+          <div><dt data-i18n="wb.attivo.t">Attività</dt><dd data-i18n="wb.attivo">Palermo dal 2012 · Monreale dal 2018</dd></div>
+          <div><dt data-i18n="wb.altri.t">Altri incarichi</dt><dd data-i18n="wb.altri">Presidente di ANAS «Zonale Policlinico», intitolata all'avv. Enzo Fragalà</dd></div>
+          <div><dt data-i18n="wb.onor.t">Onorificenze</dt><dd data-i18n="wb.onor">Cavaliere dell'Ordine al Merito della Repubblica Italiana (2000)</dd></div>
+          <div><dt>Facebook</dt><dd><a href="https://www.facebook.com/profile.php?id=100010772682720" target="_blank" rel="noopener" data-i18n="wb.fb">Profilo di Diego Mannisi</a></dd></div>
+        </dl>
+      </aside>
+
+      <p class="wiki-lead" data-i18n="wiki.lead"><strong>Diego Mannisi</strong>, nato a Palermo, è il fondatore e il presidente di <strong>A.S.FA. Sicilia ODV</strong>, l'associazione di volontariato che dal 2012 sostiene le famiglie in difficoltà e gli immigrati di Palermo e di Monreale. È Cavaliere dell'Ordine al Merito della Repubblica Italiana.<sup class="ref"><a href="#nota-1">[1]</a></sup></p>
+
+      <h3 class="wiki-h3" data-i18n="wiki.s1.h">L'associazione</h3>
+      <p data-i18n="wiki.s1.p1">Nel 2012 fonda a Palermo l'Associazione di Sostegno alle Famiglie e agli Immigrati, oggi iscritta al Registro unico del Terzo settore come A.S.FA. Sicilia ODV. Nel 2018, con un bando pubblico del Comune di Monreale, ottiene per l'associazione una villa confiscata alla mafia, che da allora ne è la sede operativa.<sup class="ref"><a href="#nota-2">[2]</a></sup></p>
+      <p data-i18n="wiki.s1.p2">Guida quattordici volontari, nessuno dei quali prende uno stipendio. Con loro organizza la distribuzione dei pacchi alimentari, che oggi raggiunge 936 famiglie a Monreale e 920 a Palermo, e lo sportello di ascolto. Scrive di persona gli avvisi di ogni distribuzione e li firma «Cav. Diego Mannisi».</p>
+
+      <h3 class="wiki-h3" data-i18n="wiki.s2.h">Salute</h3>
+      <p data-i18n="wiki.s2.p">Ospita nelle sedi dell'associazione il personale dell'ASP di Palermo per il Programma Nazionale Equità nella Salute: prenotazioni e visite mediche gratuite per chi ha un ISEE entro i 10.000 euro, italiani e stranieri. «È un interesse di tutti aiutare chi ha bisogno», ha scritto nel settembre 2026.<sup class="ref"><a href="#nota-3">[3]</a></sup></p>
+
+      <h3 class="wiki-h3" data-i18n="wiki.s3.h">Legalità</h3>
+      <p data-i18n="wiki.s3.p">Presiede l'articolazione di ANAS, l'Associazione Nazionale di Azione Sociale, intitolata all'avvocato Enzo Fragalà, vittima di mafia: una sezione nata nel 2016 d'intesa con la famiglia.<sup class="ref"><a href="#nota-4">[4]</a></sup> Nel 2020 la sede di Monreale viene intitolata a Fragalà. Da quindici anni partecipa con le sue associazioni al Memorial Salvo D'Acquisto, che unisce legalità e sport, e le associazioni che guida fanno parte del COV Sicilia, il coordinamento dei volontari.<sup class="ref"><a href="#nota-3">[3]</a></sup></p>
+
+      <h3 class="wiki-h3" data-i18n="wiki.s4.h">Riconoscimenti</h3>
+      <ul class="wiki-ul">
+        <li data-i18n="wiki.r1">Cavaliere dell'Ordine al Merito della Repubblica Italiana, con decreto del 27 dicembre 2000.<sup class="ref"><a href="#nota-1">[1]</a></sup></li>
+        <li data-i18n="wiki.r2">Premio del Comune di Palermo ai presidenti delle associazioni di volontariato, «per il suo impegno sia per le famiglie immigrate che per le famiglie in difficoltà nei comuni di Palermo e Monreale». Ritirandolo ha detto: «il premio è un riconoscimento al lavoro svolto da tutti i volontari dell'ASFA e non di una sola persona».<sup class="ref"><a href="#nota-5">[5]</a></sup></li>
+      </ul>
+
+      <h3 class="wiki-h3" data-i18n="wiki.s5.h">Citazioni</h3>
+      <ul class="wiki-quotes">
+        <li data-i18n="wiki.q1">«Piccoli gesti concreti. Fatti e non parole.»</li>
+        <li data-i18n="wiki.q2">«Umiltà, semplicità, pazienza e caparbietà al primo posto. Solo per il Bene Comune.»</li>
+        <li data-i18n="wiki.q3">«Uniti si cresce, divisi si perde.»</li>
+      </ul>
+
+      <h3 class="wiki-h3" data-i18n="wiki.s6.h">Note</h3>
+      <ol class="wiki-note">
+        <li id="nota-1"><a href="https://www.quirinale.it/onorificenze/insigniti/84293" target="_blank" rel="noopener" data-i18n="wiki.n1">Presidenza della Repubblica, banca dati delle onorificenze: «Mannisi Diego»</a></li>
+        <li id="nota-2"><a href="https://www.monrealenews.it/cronaca-monreale/cronaca-varia/21788-all%E2%80%99asfa-onlus-un-bene-confiscato-alla-mafia-oggi-la-benedizione-del-sito.html" target="_blank" rel="noopener" data-i18n="wiki.n2">MonrealeNews, 8 settembre 2018: la benedizione del bene confiscato</a></li>
+        <li id="nota-3"><a href="https://www.facebook.com/groups/707777091061742" target="_blank" rel="noopener" data-i18n="wiki.n3">Gruppo Facebook «ASFA Palermo e Monreale – Diego Mannisi», post del 20 settembre 2026</a></li>
+        <li id="nota-4"><a href="https://www.anasitalia.org/la-rete-anas-con-lo-zonale-enzo-fragala-valorizza-un-bene-confiscato-alla-mafia/" target="_blank" rel="noopener" data-i18n="wiki.n4">ANAS Italia, 4 marzo 2020: la sezione Enzo Fragalà e il bene confiscato</a></li>
+        <li id="nota-5"><a href="https://www.anasitalia.org/il-comune-di-palermo-ha-consegnato-un-premio-ai-volontari-che-si-sono-distinti-tra-questi-il-cav-mannisi/" target="_blank" rel="noopener" data-i18n="wiki.n5">ANAS Italia, 25 gennaio 2026: il premio del Comune di Palermo</a></li>
+      </ol>
+    </article>
+  </div>
+</section>
+
+<!-- ══ 11 · COME AIUTARE ═════════════════════════════════ -->
 <section class="aiutare" id="aiutare" aria-labelledby="aiut-h">
   <div class="wrap aiut-grid">
     <div class="reveal">
       <p class="occhiello" data-i18n="aiut.occhiello">Dare una mano</p>
       <h2 id="aiut-h" data-i18n="aiut.h2">Serve tempo, più ancora che soldi</h2>
-      <p data-i18n="aiut.p1">Il lunedì e il martedì bisogna scaricare, dividere, chiamare i nomi, riempire i moduli. Siamo in quattordici e le famiglie sono centinaia: due ore del tuo pomeriggio si sentono davvero.</p>
+      <p data-i18n="aiut.p1">Il lunedì e il martedì bisogna scaricare, dividere, chiamare i nomi, riempire i moduli. Siamo in quattordici e le famiglie sono più di 1.800: due ore del tuo pomeriggio si sentono davvero.</p>
       <p data-i18n="aiut.p2">Non serve nessuna competenza particolare, e non serve impegnarsi tutte le settimane. Basta presentarsi allo sportello o scrivere.</p>
       <a class="btn btn-solid" href="#contatti" data-i18n="aiut.cta">Scrivici</a>
     </div>
@@ -493,7 +614,41 @@
   </div>
 </section>
 
-<!-- ══ 11 · CONTATTI ═════════════════════════════════════ -->
+<!-- ══ 12 · NOTIZIE — i post della Pagina Facebook ════════
+     Scelta dell'utente (28/9/2026): il riquadro UFFICIALE di Facebook (Page
+     Plugin), che si aggiorna da solo appena la Pagina pubblica. Dei gruppi
+     Facebook non esiste un riquadro ufficiale (API dei gruppi chiuse da Meta
+     nell'aprile 2024): il gruppo si raggiunge col link.
+     L'iframe parte SOLO dopo il clic del visitatore: manda a Facebook la
+     visita e può scrivere cookie, quindi serve il consenso (Garante privacy,
+     linee guida cookie del 10/6/2021). ⚠️ La Pagina è ferma all'aprile 2024:
+     finché Diego non ci pubblica, il riquadro mostra quei post. -->
+<section class="notizie" id="notizie" aria-labelledby="not-h">
+  <div class="wrap not-grid">
+    <div class="not-txt reveal">
+      <p class="occhiello" data-i18n="not.occhiello">Le notizie</p>
+      <h2 id="not-h" data-i18n="not.h2">Gli avvisi, appena escono</h2>
+      <p data-i18n="not.p">Le date delle distribuzioni, le prenotazioni delle visite mediche, le iniziative: le pubblichiamo sulla nostra pagina Facebook, e qui accanto le vedi appena escono.</p>
+      <div class="not-links">
+        <a class="btn btn-solid" href="https://www.facebook.com/groups/707777091061742" target="_blank" rel="noopener" data-i18n="not.gruppo">Entra nel gruppo</a>
+        <a class="link-arrow" href="https://www.facebook.com/p/Associazione-di-Sostegno-alle-Famiglie-Aiutateci-ad-aiutare-100076316472966/" target="_blank" rel="noopener" data-i18n="not.pagina">Segui la pagina</a>
+      </div>
+      <p class="mini" data-i18n="not.mini">Nel gruppo «ASFA Palermo e Monreale – Diego Mannisi» siamo più di 900.</p>
+    </div>
+    <div class="fb-box reveal" id="fbBox" data-page="https://www.facebook.com/100076316472966">
+      <div class="fb-consent" id="fbConsent">
+        <p class="fb-c-t" data-i18n="fb.t">Gli ultimi post della nostra pagina Facebook</p>
+        <p class="fb-c-p" data-i18n="fb.p">Per mostrarli qui il tuo browser si collega a Facebook, che può usare i suoi cookie. Li carichiamo solo se sei d'accordo.</p>
+        <button type="button" class="btn btn-solid" id="fbLoad" data-i18n="fb.btn">Mostra i post</button>
+        <label class="fb-remember"><input type="checkbox" id="fbRemember"> <span data-i18n="fb.ricorda">Ricorda la mia scelta su questo dispositivo</span></label>
+        <a class="link-arrow" href="https://www.facebook.com/p/Associazione-di-Sostegno-alle-Famiglie-Aiutateci-ad-aiutare-100076316472966/" target="_blank" rel="noopener" data-i18n="fb.apri">Oppure aprili direttamente su Facebook</a>
+      </div>
+      <button type="button" class="fb-forget" id="fbForget" hidden data-i18n="fb.dimentica">Non caricarli più in automatico</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 13 · CONTATTI ═════════════════════════════════════ -->
 <section class="contatti" id="contatti" aria-labelledby="cont-h">
   <div class="wrap">
     <header class="sec-head reveal">
@@ -501,10 +656,15 @@
       <h2 id="cont-h" data-i18n="cont.h2">Siamo raggiungibili, davvero</h2>
     </header>
     <div class="cont-grid">
-      <a class="cont-c reveal" href="tel:+393465472525" id="ctaTelefono">
+      <a class="cont-c reveal" href="tel:+393313669364" id="ctaTelefono">
         <span class="cc-lab" data-i18n="cont.tel">Telefono</span>
-        <span class="cc-val">346 547 2525</span>
+        <span class="cc-val">331 366 9364</span>
         <span class="cc-note" data-i18n="cont.tel.n">Sportello lunedì, mercoledì e venerdì, 17:30–19:00</span>
+      </a>
+      <a class="cont-c reveal" href="tel:+393518884997">
+        <span class="cc-lab" data-i18n="cont.urg">Urgenze</span>
+        <span class="cc-val">351 888 4997</span>
+        <span class="cc-note" data-i18n="cont.urg.n">Per comunicazioni urgenti, a qualsiasi ora</span>
       </a>
       <a class="cont-c reveal" href="mailto:info@asfasicilia.it" data-placeholder="email">
         <span class="cc-lab" data-i18n="cont.mail">Email</span>
@@ -514,7 +674,12 @@
       <a class="cont-c reveal" href="https://www.facebook.com/groups/707777091061742" target="_blank" rel="noopener">
         <span class="cc-lab">Facebook</span>
         <span class="cc-val" data-i18n="cont.fb">Il nostro gruppo</span>
-        <span class="cc-note" data-i18n="cont.fb.n">899 iscritti · qui pubblichiamo tutti gli avvisi di distribuzione</span>
+        <span class="cc-note" data-i18n="cont.fb.n">Più di 900 iscritti · qui pubblichiamo tutti gli avvisi di distribuzione</span>
+      </a>
+      <a class="cont-c reveal" href="https://www.facebook.com/p/Associazione-di-Sostegno-alle-Famiglie-Aiutateci-ad-aiutare-100076316472966/" target="_blank" rel="noopener">
+        <span class="cc-lab">Facebook</span>
+        <span class="cc-val" data-i18n="cont.pag">La nostra pagina</span>
+        <span class="cc-note" data-i18n="cont.pag.n">Le ultime notizie, anche qui sul sito</span>
       </a>
       <div class="cont-c reveal is-static">
         <span class="cc-lab" data-i18n="cont.pec">PEC</span>
@@ -541,6 +706,8 @@
       <a href="#cosa" data-i18n="ftr.l2">Cosa portiamo</a>
       <a href="#bene" data-i18n="ftr.l3">Il bene confiscato</a>
       <a href="#numeri" data-i18n="ftr.l4">Numeri e trasparenza</a>
+      <a href="#presidente" data-i18n="ftr.l8">Il presidente</a>
+      <a href="#notizie" data-i18n="ftr.l9">Notizie</a>
     </div>
     <div class="ftr-col">
       <h4 data-i18n="ftr.c2">Sostienici</h4>
@@ -550,7 +717,7 @@
     </div>
     <div class="ftr-col ftr-legal">
       <h4 data-i18n="ftr.c3">Dati dell'ente</h4>
-      <p data-i18n="ftr.legal">A.S.FA. Sicilia ODV<br>Associazione di Sostegno alle Famiglie<br>Via Filippo Corazza 20/B — 90127 Palermo<br>Sede operativa: Via Favara 6 — 90046 Monreale (PA)<br>C.F. 97270000827 · RUNTS n. 125129</p>
+      <p data-i18n="ftr.legal">A.S.FA. Sicilia ODV<br>Associazione di Sostegno alle Famiglie<br>Sede legale: Via Filippo Corazza 20/B — 90127 Palermo<br>Sede operativa: Via Favara 6 — 90046 Monreale (PA)<br>Sede di Palermo: Via Antonio Marinuzzi 61 — 90127 Palermo<br>C.F. 97270000827 · RUNTS n. 125129</p>
     </div>
   </div>
   <div class="ftr-bar">
@@ -561,7 +728,7 @@
 
 <!-- ══ ACTION BAR MOBILE ═════════════════════════════════ -->
 <div class="action-bar" id="actionBar">
-  <a href="tel:+393465472525" data-i18n="ab.tel">Chiama</a>
+  <a href="tel:+393313669364" data-i18n="ab.tel">Chiama</a>
   <a href="#settimana" data-i18n="ab.orari">Quando</a>
   <a class="ab-cta" href="#5x1000" data-i18n="ab.dona">5×1000</a>
 </div>
