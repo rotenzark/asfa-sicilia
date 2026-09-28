@@ -3,16 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>A.S.FA. Sicilia ODV — Associazione di Sostegno alle Famiglie · Palermo e Monreale</title>
-<meta name="description" content="Dal 2012 sosteniamo le famiglie di Palermo e Monreale: distribuzione alimentare, abiti, visite mediche gratuite e sportello di ascolto. La sede di Monreale è un bene confiscato alla mafia. Dona il tuo 5×1000: C.F. 97270000827.">
+<!-- «ASFA» senza punti nel titolo: è come la cercano (gruppo «ASFA Palermo e
+     Monreale», stampa «Asfa»); la grafia ufficiale «A.S.FA.» resta nel resto. -->
+<title>ASFA Sicilia ODV — Associazione di Sostegno alle Famiglie · Palermo e Monreale</title>
+<meta name="description" content="ASFA Sicilia ODV aiuta le famiglie di Palermo e Monreale dal 2012: pacchi alimentari, abiti, visite mediche gratuite, sportello di ascolto. 5×1000: C.F. 97270000827.">
 <link rel="canonical" href="https://asfasiciliaodv.it/">
-<!-- ⚠️ TEMPORANEO — anteprima per il cliente. Telefoni e IBAN sono confermati
-     (28/9/2026), ma l'email è ancora da confermare: finché lo è,
-     la pagina non deve comparire nelle ricerche.
-     DA RIMUOVERE quando si va live sul dominio con i contatti veri.
-     Dominio: asfasiciliaodv.it (comprato dall'utente su Aruba il 28/9/2026).
-     Il file CNAME si aggiunge SOLO dopo che il DNS punta a GitHub Pages. -->
-<meta name="robots" content="noindex, nofollow">
+<!-- Pubblico su Google dal 28/9/2026, sul dominio asfasiciliaodv.it (Aruba,
+     account di Diego Mannisi). Senza email per ora: la card tornerà quando
+     esiste la casella (vedi il commit e384229 per il markup). -->
+<meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="it_IT">
 <meta property="og:site_name" content="A.S.FA. Sicilia ODV">
@@ -28,6 +27,9 @@
 <meta name="twitter:image" content="https://asfasiciliaodv.it/img/og-image.jpg">
 <meta name="theme-color" content="#7A1418">
 <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
+<!-- Google mostra l'icona nei risultati solo se è un multiplo di 48 px -->
+<link rel="icon" href="img/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="icon" href="img/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="icon" href="img/favicon-512.png" sizes="512x512" type="image/png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,7 +38,7 @@
 <link rel="stylesheet" href="css/styles.css?v=4">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-<script src="js/main.js?v=4" defer></script>
+<script src="js/main.js?v=5" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -45,14 +47,33 @@
       "@type": "NGO",
       "@id": "https://asfasiciliaodv.it/#org",
       "name": "A.S.FA. Sicilia ODV — Associazione di Sostegno alle Famiglie",
-      "alternateName": ["A.S.FA. Sicilia", "Associazione di Sostegno alle Famiglie e agli Immigrati"],
+      "legalName": "A.S.FA. Sicilia ODV - Associazione di Sostegno alle Famiglie",
+      "alternateName": [
+        "A.S.FA. Sicilia",
+        "ASFA Sicilia",
+        "ASFA Sicilia ODV",
+        "ASFA Palermo e Monreale",
+        "ASFA ODV",
+        "Associazione di Sostegno alle Famiglie e agli Immigrati",
+        "Associazione di Sostegno alle Famiglie e agli Immigrati di Palermo"
+      ],
       "url": "https://asfasiciliaodv.it/",
-      "logo": "https://asfasiciliaodv.it/img/logo-asfa-full.png",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://asfasiciliaodv.it/img/logo-quadrato.png",
+        "width": 600,
+        "height": 600
+      },
       "image": "https://asfasiciliaodv.it/img/sede-inaugurazione.jpg",
       "foundingDate": "2012-01-16",
       "slogan": "Noi ci siamo, pensiamo al dopo di noi con azioni concrete",
       "taxID": "97270000827",
       "telephone": "+39 331 366 9364",
+      "contactPoint": [
+        { "@type": "ContactPoint", "telephone": "+39 331 366 9364", "contactType": "informazioni", "areaServed": "IT", "availableLanguage": "Italian" },
+        { "@type": "ContactPoint", "telephone": "+39 351 888 4997", "contactType": "comunicazioni urgenti", "areaServed": "IT", "availableLanguage": "Italian" }
+      ],
+      "knowsAbout": ["distribuzione alimentare", "pacchi alimentari", "abiti usati", "visite mediche gratuite", "sportello di ascolto", "sostegno agli immigrati", "beni confiscati alla mafia"],
       "description": "Organizzazione di volontariato che sostiene le famiglie in difficoltà di Palermo e Monreale con distribuzione alimentare, abiti, visite mediche gratuite e uno sportello di ascolto. La sede operativa di Monreale è un bene confiscato alla mafia.",
       "areaServed": [
         { "@type": "City", "name": "Palermo" },
@@ -115,6 +136,7 @@
       "@id": "https://asfasiciliaodv.it/#site",
       "url": "https://asfasiciliaodv.it/",
       "name": "A.S.FA. Sicilia ODV",
+      "alternateName": ["ASFA Sicilia ODV", "ASFA Sicilia"],
       "inLanguage": ["it", "en", "ar"],
       "publisher": { "@id": "https://asfasiciliaodv.it/#org" }
     },
@@ -534,7 +556,7 @@
     <div class="carte reveal">
       <h3 data-i18n="carte.h3">Chi siamo, sulla carta</h3>
       <ul>
-        <li data-i18n="carte.1"><strong>A.S.FA. Sicilia ODV</strong> — Associazione di Sostegno alle Famiglie. Costituita il 16 gennaio 2012.</li>
+        <li data-i18n="carte.1"><strong>A.S.FA. Sicilia ODV</strong> — Associazione di Sostegno alle Famiglie, per tutti «ASFA». Costituita il 16 gennaio 2012.</li>
         <li data-i18n="carte.2">Iscritta al <strong>Registro unico nazionale del Terzo settore</strong>, sezione Organizzazioni di volontariato, al n. 125129.</li>
         <li data-i18n="carte.3">Codice fiscale <strong>97270000827</strong>. Nessuna partita IVA: non svolgiamo attività commerciale.</li>
         <li data-i18n="carte.4">Presidente <strong>Diego Mannisi</strong>, vicepresidente <strong>Leonardo Spena</strong>. Consiglio di quattro persone.</li>
@@ -615,8 +637,8 @@
       <p class="occhiello" data-i18n="aiut.occhiello">Dare una mano</p>
       <h2 id="aiut-h" data-i18n="aiut.h2">Serve tempo, più ancora che soldi</h2>
       <p data-i18n="aiut.p1">Il lunedì e il martedì bisogna scaricare, dividere, chiamare i nomi, riempire i moduli. Siamo in quattordici e le famiglie sono più di 1.800: due ore del tuo pomeriggio si sentono davvero.</p>
-      <p data-i18n="aiut.p2">Non serve nessuna competenza particolare, e non serve impegnarsi tutte le settimane. Basta presentarsi allo sportello o scrivere.</p>
-      <a class="btn btn-solid" href="#contatti" data-i18n="aiut.cta">Scrivici</a>
+      <p data-i18n="aiut.p2">Non serve nessuna competenza particolare, e non serve impegnarsi tutte le settimane. Basta presentarsi allo sportello o chiamarci.</p>
+      <a class="btn btn-solid" href="#contatti" data-i18n="aiut.cta">Contattaci</a>
     </div>
     <figure class="reveal">
       <button type="button" class="zoom" data-full="img/parete-memoria.jpg" aria-label="Ingrandisci la foto della parete" data-i18n-aria="zoom.5">
@@ -679,11 +701,8 @@
         <span class="cc-val">351 888 4997</span>
         <span class="cc-note" data-i18n="cont.urg.n">Per comunicazioni urgenti, a qualsiasi ora</span>
       </a>
-      <a class="cont-c reveal" href="mailto:info@asfasiciliaodv.it" data-placeholder="email">
-        <span class="cc-lab" data-i18n="cont.mail">Email</span>
-        <span class="cc-val">info@asfasiciliaodv.it</span>
-        <span class="cc-note" data-i18n="cont.mail.n">Indirizzo da confermare</span>
-      </a>
+      <!-- Email: nessuna casella ancora (28/9/2026). La card tornerà qui, con le
+           chiavi cont.mail / cont.mail.n in EN e AR (markup nel commit e384229). -->
       <a class="cont-c reveal" href="https://www.facebook.com/groups/707777091061742" target="_blank" rel="noopener">
         <span class="cc-lab">Facebook</span>
         <span class="cc-val" data-i18n="cont.fb">Il nostro gruppo</span>
@@ -711,7 +730,7 @@
     <div class="ftr-brand">
       <img src="img/logo-asfa-full.png" alt="Marchio completo di A.S.FA. Sicilia ODV — Palermo" width="560" height="909" data-i18n-alt="ftr.logo.alt">
       <p class="ftr-claim" data-i18n="ftr.claim">Noi ci siamo, pensiamo al dopo di noi con azioni concrete.</p>
-      <p class="ftr-since" data-i18n="ftr.since">Palermo e Monreale, dal 2012.</p>
+      <p class="ftr-since" data-i18n="ftr.since">ASFA · Palermo e Monreale, dal 2012.</p>
     </div>
     <div class="ftr-col">
       <h4 data-i18n="ftr.c1">Il sito</h4>
