@@ -160,7 +160,8 @@
         'tier.25': '<span class="t-eur">€25</span><span class="t-lab">One complete food parcel</span>',
         'tier.50': '<span class="t-eur">€50</span><span class="t-lab">Fuel to go and collect the supplies</span>',
         'tier.100': '<span class="t-eur">€100</span><span class="t-lab">A day of premises: power, heating, cleaning</span>',
-        'modo.1.h': 'Bank transfer', 'modo.1.p': 'Reference: “Charitable donation”. Payable to A.S.FA. Sicilia ODV.',
+        'modo.1.h': 'Bank transfer', 'modo.1.p': 'Reference: “Erogazione liberale” (charitable donation). Payable to A.S.FA. Sicilia ODV – Associazione di Sostegno alle Famiglie.',
+        'modo.1.copia': 'Copy the IBAN',
         'modo.2.h': '5×1000', 'modo.2.p': 'It costs nothing. Box “Support for third-sector bodies registered with RUNTS”.',
         'modo.3.h': 'Donating goods', 'modo.3.p': 'Non-perishable food and good-condition clothing can be delivered directly to the Monreale premises during opening hours.',
         'modo.4.h': 'Tax relief', 'modo.4.p': 'Donations to volunteer organisations are deductible at 35% or from taxable income, under art. 83 of the Third Sector Code (Legislative Decree 117/2017).',
@@ -334,7 +335,8 @@
         'tier.25': '<span class="t-eur">25 €</span><span class="t-lab">طرد غذائي كامل</span>',
         'tier.50': '<span class="t-eur">50 €</span><span class="t-lab">وقود الذهاب لجمع المؤن</span>',
         'tier.100': '<span class="t-eur">100 €</span><span class="t-lab">يوم تشغيل للمقرّ: كهرباء، تدفئة، نظافة</span>',
-        'modo.1.h': 'حوالة مصرفية', 'modo.1.p': 'البيان: «تبرّع خيري». باسم A.S.FA. Sicilia ODV.',
+        'modo.1.h': 'حوالة مصرفية', 'modo.1.p': 'البيان: «<span dir="ltr">Erogazione liberale</span>» (تبرّع خيري). باسم <span dir="ltr">A.S.FA. Sicilia ODV – Associazione di Sostegno alle Famiglie</span>.',
+        'modo.1.copia': 'انسخ رقم IBAN',
         'modo.2.h': '<span dir="ltr">5×1000</span>', 'modo.2.p': 'لا يكلّف شيئًا. الخانة: «دعم هيئات القطاع الثالث المسجّلة في RUNTS».',
         'modo.3.h': 'التبرّع بالمواد', 'modo.3.p': 'المواد الغذائية غير القابلة للتلف والملابس بحالة جيّدة تُسلَّم مباشرة في مقرّ مونريالي خلال ساعات العمل.',
         'modo.4.h': 'المزايا الضريبية', 'modo.4.p': 'التبرّعات لمنظّمات التطوّع قابلة للخصم بنسبة 35% أو للاقتطاع من الدخل، وفق المادة 83 من قانون القطاع الثالث (المرسوم التشريعي 117/2017).',
@@ -811,19 +813,19 @@
      È il gesto più importante della pagina: il 5×1000 è la voce più
      grande del bilancio dell'associazione. Fallback su execCommand per
      i browser senza clipboard API o serviti su http. */
-  var cfCopy = document.getElementById('cfCopy');
-  var cfNum = document.getElementById('cfNum');
-  if (cfCopy && cfNum) {
-    cfCopy.addEventListener('click', function () {
-      var code = cfNum.textContent.trim();
+  /* 28/9/2026: lo stesso gesto serve anche all'IBAN del bonifico, quindi il
+     codice di copia è uno solo per tutti e due i bottoni. */
+  var copiaSulClic = function (btn, leggi) {
+    btn.addEventListener('click', function () {
+      var code = leggi();
       var done = function () {
-        var before = cfCopy.textContent;
-        cfCopy.classList.add('is-done');
-        cfCopy.textContent = root.lang === 'ar' ? 'تمّ النسخ ✓'
-                           : root.lang === 'en' ? 'Copied ✓' : 'Copiato ✓';
+        var before = btn.textContent;
+        btn.classList.add('is-done');
+        btn.textContent = root.lang === 'ar' ? 'تمّ النسخ ✓'
+                        : root.lang === 'en' ? 'Copied ✓' : 'Copiato ✓';
         setTimeout(function () {
-          cfCopy.classList.remove('is-done');
-          cfCopy.textContent = before;
+          btn.classList.remove('is-done');
+          btn.textContent = before;
         }, 2200);
       };
       if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -840,7 +842,14 @@
         done();
       } catch (e) {}
     });
-  }
+  };
+  var cfCopy = document.getElementById('cfCopy');
+  var cfNum = document.getElementById('cfNum');
+  if (cfCopy && cfNum) copiaSulClic(cfCopy, function () { return cfNum.textContent.trim(); });
+  /* l'IBAN si copia nella forma compatta (data-iban): a video è a gruppi di 4 */
+  var ibanCopy = document.getElementById('ibanCopy');
+  var ibanNum = document.getElementById('ibanNum');
+  if (ibanCopy && ibanNum) copiaSulClic(ibanCopy, function () { return ibanNum.getAttribute('data-iban'); });
 
   /* ---------- GESTO-FIRMA: il tabellone che si accende ----------
      I giorni entrano uno dopo l'altro come le righe di un tabellone, e

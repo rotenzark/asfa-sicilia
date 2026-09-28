@@ -439,6 +439,18 @@ button.btn { border: 0; cursor: pointer; }
 }
 [data-placeholder] .iban, .iban[data-placeholder] { color: var(--inch-tenue); }
 .modo .mini { margin: 0; }
+.modo .iban-banca { margin-top: .35rem; }
+/* copia dell'IBAN: stesso gesto del codice fiscale del 5×1000, in piccolo */
+.iban-copy {
+  margin-top: .9rem; padding: 8px 16px;
+  font-family: var(--f-display); font-weight: 600; font-size: .86rem;
+  color: var(--blu); background: none;
+  border: 1.5px solid var(--blu); border-radius: 999px; cursor: pointer;
+  transition: background .18s ease, color .18s ease;
+}
+.iban-copy:hover { background: var(--blu); color: #fff; }
+.iban-copy.is-done { background: var(--verde); border-color: var(--verde); color: #fff; }
+[dir="rtl"] .iban-copy { font-family: var(--f-arabo); }
 
 /* ── 9 · NUMERI ────────────────────────────────────────────────── */
 .numeri { padding: 92px 0; background: var(--bianco); }

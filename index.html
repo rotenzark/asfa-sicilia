@@ -6,8 +6,8 @@
 <title>A.S.FA. Sicilia ODV — Associazione di Sostegno alle Famiglie · Palermo e Monreale</title>
 <meta name="description" content="Dal 2012 sosteniamo le famiglie di Palermo e Monreale: distribuzione alimentare, abiti, visite mediche gratuite e sportello di ascolto. La sede di Monreale è un bene confiscato alla mafia. Dona il tuo 5×1000: C.F. 97270000827.">
 <link rel="canonical" href="https://asfasiciliaodv.it/">
-<!-- ⚠️ TEMPORANEO — anteprima per il cliente. I telefoni sono confermati
-     (28/9/2026), ma IBAN ed email sono ancora da confermare: finché lo sono,
+<!-- ⚠️ TEMPORANEO — anteprima per il cliente. Telefoni e IBAN sono confermati
+     (28/9/2026), ma l'email è ancora da confermare: finché lo è,
      la pagina non deve comparire nelle ricerche.
      DA RIMUOVERE quando si va live sul dominio con i contatti veri.
      Dominio: asfasiciliaodv.it (comprato dall'utente su Aruba il 28/9/2026).
@@ -33,10 +33,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..600&family=IBM+Plex+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=3">
+<link rel="stylesheet" href="css/styles.css?v=4">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-<script src="js/main.js?v=3" defer></script>
+<script src="js/main.js?v=4" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -141,6 +141,11 @@
           "@type": "Question",
           "name": "Come posso destinare il 5×1000 ad A.S.FA. Sicilia?",
           "acceptedAnswer": { "@type": "Answer", "text": "Nella dichiarazione dei redditi, nel riquadro «Sostegno degli enti del Terzo settore iscritti nel RUNTS», si firma e si scrive il codice fiscale 97270000827. Non costa nulla al contribuente." }
+        },
+        {
+          "@type": "Question",
+          "name": "Come posso fare una donazione con bonifico?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Con un bonifico sul conto intestato ad A.S.FA. Sicilia ODV – Associazione di Sostegno alle Famiglie presso Intesa Sanpaolo, IBAN IT95 U030 6909 6061 0000 0071 463 (BIC BCITITMM), con causale «Erogazione liberale». Le donazioni alle organizzazioni di volontariato sono detraibili o deducibili secondo l'art. 83 del Codice del Terzo settore." }
         },
         {
           "@type": "Question",
@@ -469,10 +474,16 @@
     </div>
 
     <div class="modi" id="dona-modi">
+      <!-- IBAN dal conto dell'associazione (foto dell'app della banca mandata
+           dall'utente il 28/9/2026). Verificato: 27 caratteri, mod-97 = 1,
+           CIN «U» ricalcolato da ABI+CAB+conto. ABI 03069 e BIC = Intesa Sanpaolo.
+           A video a gruppi di 4; il bottone copia la forma compatta (data-iban). -->
       <article class="modo reveal">
         <h3 data-i18n="modo.1.h">Bonifico bancario</h3>
-        <p class="iban" data-placeholder="iban">IBAN da confermare</p>
-        <p class="mini" data-i18n="modo.1.p">Causale: «Erogazione liberale». Intestato ad A.S.FA. Sicilia ODV.</p>
+        <p class="iban" id="ibanNum" data-iban="IT95U0306909606100000071463">IT95 U030 6909 6061 0000 0071 463</p>
+        <p class="mini" data-i18n="modo.1.p">Causale: «Erogazione liberale». Intestato ad A.S.FA. Sicilia ODV – Associazione di Sostegno alle Famiglie.</p>
+        <p class="mini iban-banca">Intesa Sanpaolo · BIC BCITITMM</p>
+        <button class="iban-copy" type="button" id="ibanCopy" data-i18n="modo.1.copia">Copia l'IBAN</button>
       </article>
       <article class="modo reveal">
         <h3 data-i18n="modo.2.h">5×1000</h3>
